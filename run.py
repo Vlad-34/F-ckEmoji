@@ -4,16 +4,6 @@ from tkinter import filedialog
 
 
 if __name__ == "__main__":
-    replacements = {
-        '+': '➕',
-        '-': '➖',
-        '>': '▶️',
-        '<': '◀️',
-        '.': '💬',
-        ',': '📨',
-        '[': '⤵️',
-        ']': '⤴️'
-    }
 
     root = tk.Tk()
     root.withdraw()
@@ -28,8 +18,6 @@ if __name__ == "__main__":
         os.system('gcc -O3 -march=native -funroll-loops -finline-functions -flto -fomit-frame-pointer '
                   '-fno-strict-aliasing c-code.c -o fe.out')
         print("File compiled successfully! 🎉")
-        os.remove('c-code.c')
-        os.system('./fe.out')
 
         print('\n')
     else:

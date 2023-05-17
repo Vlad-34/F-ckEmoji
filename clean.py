@@ -2,7 +2,7 @@ import os
 
 if __name__ == "__main__":
     try:
-        files = ['lex.yy.c', 'y.tab.h', 'y.tab.c', 'fe.out']
+        files = ['lex.yy.c', 'y.tab.h', 'y.tab.c', 'fe.out', "c-code.c"]
         [os.remove(file) for file in files]
     except FileNotFoundError:
         print("Already clean! ✨")
