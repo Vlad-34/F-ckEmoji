@@ -5,7 +5,7 @@ extern int yylex();
 void yyerror(const char *s);
 %}
 
-%token INC DEC MOVR MOVL OUT IN LB RB
+%token INC DEC MOVR MOVL OUT IN LB RB ENQUEUE DEQUEUE PUSH POP
 
 %%
 
@@ -22,6 +22,10 @@ command:
     | IN      { printf("*ptr=getchar();\n"); }
     | LB      { printf("while(*ptr){\n"); }
     | RB      { printf("}\n"); }
+    | ENQUEUE { printf("%s", "if (tail != 30000) { queue[tail++] = *ptr; tail %= 30000; }\n"); }
+    | DEQUEUE { printf("%s", "if (head != tail) { *ptr = queue[head++]; head %= 30000; }\n"); }
+	| PUSH    { printf("stack[sp++] = *ptr;\n"); }
+    | POP     { printf("if (sp > 0) *ptr = stack[--sp];\n"); }
     ;
 
 %%
@@ -34,6 +38,10 @@ int main() {
     printf("#include <stdio.h>\n");
     printf("char mem[30000] = {0};\n");
     printf("char *ptr = mem;\n");
+    printf("char queue[30000] = {0};\n");
+    printf("int head = 0, tail = 0;\n");
+    printf("char stack[30000] = {0};\n");
+    printf("int sp = 0;\n");
     printf("int main() {\n");
 
     yyparse();

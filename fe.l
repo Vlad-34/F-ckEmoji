@@ -4,17 +4,21 @@
 
 %%
 
-"➕"          { return INC; }
-"➖"          { return DEC; }
-"▶️"           { return MOVR; }
-"◀️"           { return MOVL; }
-"💬"          { return OUT; }
-"📨"          { return IN; }
-"⤵️"          { return LB; }
-"⤴️"          { return RB; }
+"➕"		{ return INC; }
+"➖"		{ return DEC; }
+"▶️"		{ return MOVR; }
+"◀️"		{ return MOVL; }
+"💬"		{ return OUT; }
+"📨"		{ return IN; }
+"⤵️"		{ return LB; }
+"⤴️"		{ return RB; }
+"📥"		{ return ENQUEUE; }
+"📤"		{ return DEQUEUE; }
+"📚"        { return PUSH; }
+"🎒"        { return POP; }
 
-[ \t\n]      { /* ignore whitespace */ }
-.            { /* ignore all other characters */ }
+[ \t\n]		{ /* ignore whitespace */ }
+.			{ /* ignore all other characters */ }
 
 %%
 

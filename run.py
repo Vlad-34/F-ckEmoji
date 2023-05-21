@@ -18,6 +18,7 @@ if __name__ == "__main__":
         os.system('gcc -O3 -march=native -funroll-loops -finline-functions -flto -fomit-frame-pointer '
                   '-fno-strict-aliasing c-code.c -o fe.out')
         print("File compiled successfully! 🎉")
+        os.system('./fe.out')
 
         print('\n')
     else:
