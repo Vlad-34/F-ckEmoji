@@ -24,7 +24,7 @@ command:
     | RB      { printf("}\n"); }
     | ENQUEUE { printf("%s", "if (tail != 30000) { queue[tail++] = *ptr; tail %= 30000; }\n"); }
     | DEQUEUE { printf("%s", "if (head != tail) { *ptr = queue[head++]; head %= 30000; }\n"); }
-	| PUSH    { printf("stack[sp++] = *ptr;\n"); }
+    | PUSH    { printf("stack[sp++] = *ptr;\n"); }
     | POP     { printf("if (sp > 0) *ptr = stack[--sp];\n"); }
     ;
 

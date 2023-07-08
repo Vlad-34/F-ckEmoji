@@ -14,11 +14,11 @@
 "⤴️"		{ return RB; }
 "📥"		{ return ENQUEUE; }
 "📤"		{ return DEQUEUE; }
-"📚"        { return PUSH; }
-"🎒"        { return POP; }
+"📚"        	{ return PUSH; }
+"🎒"        	{ return POP; }
 
 [ \t\n]		{ /* ignore whitespace */ }
-.			{ /* ignore all other characters */ }
+.		{ /* ignore all other characters */ }
 
 %%
 
